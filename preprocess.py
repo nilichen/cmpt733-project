@@ -1,11 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+import os
 
 
 def prod_ratio_vars(df):
@@ -157,13 +153,18 @@ def main():
                   'rsst_acc', 'ch_res', 'ch_inv', 'soft_assets', 'ch_cs', 'ch_cm', 'ch_roa',
                   'ch_fcf', 'ch_emp', 'exfin', 'bm', 'ep']
 
-    df_ratios['misstated_prob'] = np.random.uniform(0, 1, df_ratios.shape[0])
+    results = pd.read_csv('results.csv')
     df_ratios_only = df_ratios[['gvkey', 'fyear', 'sic'] +
                                ratio_cols + ['misstated', 'misstated_prob']]
     df_ratios_only = df_ratios_only[(df_ratios_only.isnull().sum(
         axis=1) / df_ratios_only.shape[1]) < 0.8]
-    df_ratios_only.to_csv('annual_compustat_ratios.csv', index=False)
+    df_ratios_only = df_ratios_only.merge(
+        results[['fyear', 'gvkey', 'pred_prob']], on=['gvkey', 'fyear'])
+    df_ratios_only.to_csv('data/annual_compustat_ratios.zip', index=False)
 
 
 if __name__ == '__main__':
-    main()
+    if os.path.isfile('data/annual_compustat_ratios.zip'):
+        print("annual_compustat_ratios.zip already exists")
+    else:
+        main()
