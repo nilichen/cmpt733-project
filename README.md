@@ -46,9 +46,12 @@ Katrina Ni, Leiling Tao
 	df_ratios_only.to_csv('data/annual_compustat_ratios.zip', index=False)
 	```
 -  Run in local server - see https://dash.plot.ly/deployment if want to deploy the app in Heroku
+    > can skip preprocessing and training part and run this command directly with downloaded data
+    
 	```bash
 	python app.py
 	```
 
-## The Data Product
+## The Data Product  
+https://financial-dashboard-app.herokuapp.com/
 ![Dashboard](http://g.recordit.co/yeegWMh18q.gif)
