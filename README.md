@@ -34,7 +34,7 @@ Katrina Ni, Leiling Tao
 
 ### Train the model
 - See *models_with_raw_data.py*, *models_with_ratios.py*, *models_ensemble.py* for reference
- > prediction result from the mete-model is already included in downloaded data.zip as *results.csv*
+    > prediction result from the mete-model is already included in downloaded data.zip as *results.csv*
 
 ### Deploy Dash application offline
 - Merge preprocessed data with the results from the meta-model
