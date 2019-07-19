@@ -10,7 +10,7 @@ dash-core-components==0.22.1
 dash-html-components==0.10.0
 dash-renderer==0.12.1
 decorator==4.3.0
-Flask==0.12.2
+Flask==1.0
 Flask-Compress==1.4.0
 gast==0.2.0
 grpcio==1.11.0
