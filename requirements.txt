@@ -27,7 +27,7 @@ Markdown==2.6.11
 MarkupSafe==1.0
 matplotlib==2.2.2
 nbformat==4.4.0
-numpy==1.14.2
+numpy==1.22.0
 pandas==0.22.0
 plotly==2.5.1
 protobuf==3.5.2.post1
